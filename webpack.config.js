@@ -1,13 +1,27 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+let killCommand = () => { }
 module.exports = {
     entry: './src/index.js',
 
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "index_bundle.js",
-        publicPath: '/'
     },
+    devServer: {
+        onListening: function (server) {
+            const port = server.listeningApp.address().port;
+            killCommand = () => {
+                server.close();
+            }
+            setTimeout(() => {
+                server.close();
+            }, 60000);
+            console.log('Listening on port:', port);
+        },
+
+    },
+
     module: {
         rules: [
             {
