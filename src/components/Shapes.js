@@ -4,8 +4,8 @@ import { Link, useLocation } from 'react-router-dom'
 
   
  export default function Shapes() {
-    const { search } = useLocation();
-    let query = new URLSearchParams(search);
+   
+    
   
     // <Home />
     return (
@@ -27,12 +27,12 @@ import { Link, useLocation } from 'react-router-dom'
           </li>
         </ul>
   
-          <Child shape={query.get("shape")}color={query.get("color")} />
+          
         
       </div>
     );
   }
-  
+//   DO NOT touch CHILD function
   function Child({ shape,color }) {
     
     if (shape === "circle"){
