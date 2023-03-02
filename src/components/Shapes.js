@@ -4,8 +4,8 @@ import { Link, useLocation } from 'react-router-dom'
 
   
  export default function Shapes() {
-    const { search } = useLocation();
-    let query = new URLSearchParams(search);
+   
+    
   
     // <Home />
     return (
@@ -14,25 +14,25 @@ import { Link, useLocation } from 'react-router-dom'
           <h2>Shapes</h2>
           <ul className="navbar-shapes">
           <li>
-            <Link to="/Shapes?shape=square&color=Blue">Blue Square</Link>
+            <Link to="/shapes?shape=square&color=Blue">Blue Square</Link>
           </li>
           <li>
-            <Link to="/Shapes?shape=square&color=Red">Red Square</Link>
+            <Link to="/shapes?shape=square&color=Red">Red Square</Link>
           </li>
           <li>
-            <Link to="/Shapes?shape=circle&color=Blue">Blue Circle</Link>
+            <Link to="/shapes?shape=circle&color=Blue">Blue Circle</Link>
           </li>
           <li>
-            <Link to="/Shapes?shape=circle&color=Red">Red Circle</Link>
+            <Link to="/shapes?shape=circle&color=Red">Red Circle</Link>
           </li>
         </ul>
   
-          <Child shape={query.get("shape")}color={query.get("color")} />
+          
         
       </div>
     );
   }
-  
+//   DO NOT touch CHILD function
   function Child({ shape,color }) {
     
     if (shape === "circle"){
